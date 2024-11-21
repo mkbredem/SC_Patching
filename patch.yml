@@ -1,0 +1,9 @@
+---
+- name: Patch SC Servers
+  hosts: all
+
+  tasks:
+    - name: patch Servers
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
