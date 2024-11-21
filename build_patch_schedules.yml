@@ -7,7 +7,7 @@
       debug:
         var: groups
 
-    - name: Process each group
+    - name: Show Patch Date
       debug:
-        msg: "Processing group {{ item }}"
+        msg: "{{ item | extract_patch_date_from_host_collection}}"
       loop: "{{ groups.keys() | difference(['all', 'ungrouped']) }}"
