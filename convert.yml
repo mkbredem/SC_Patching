@@ -1,0 +1,10 @@
+- name: Example Playbook
+  hosts: localhost
+  tasks:
+    - name: Create patch_date variable
+      set_fact:
+        patch_date: "{{ 'LXP-RHE-QTR-02SAT-0800-TS' | extract_patch_date_from_host_collection }}"
+
+    - name: Display patch date
+      debug:
+        msg: "Patch date is: {{ patch_date }}"
