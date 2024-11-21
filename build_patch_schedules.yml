@@ -1,0 +1,7 @@
+---
+- name: convert host_collection groups to patch schedules
+  hosts: all
+
+  tasks:
+    debug:
+      var: groups
