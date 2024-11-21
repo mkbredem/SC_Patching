@@ -6,3 +6,8 @@
     - name: show groups
       debug:
         var: groups
+
+    - name: Process each group
+      debug:
+        msg: "Processing group {{ item }}"
+      loop: "{{ groups.keys() | difference(['all', 'ungrouped']) }}"
