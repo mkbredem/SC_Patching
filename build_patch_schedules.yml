@@ -3,5 +3,6 @@
   hosts: all
 
   tasks:
-    debug:
-      var: groups
+    - name: show groups
+      debug:
+        var: groups
