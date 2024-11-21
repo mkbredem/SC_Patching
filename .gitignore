@@ -3,3 +3,4 @@ include/
 lib/
 filter_plugins/__pycache__/
 .env
+pyvenv.cfg
