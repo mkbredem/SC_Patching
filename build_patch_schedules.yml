@@ -11,3 +11,11 @@
       debug:
         msg: "{{ item | extract_patch_date_from_host_collection}}"
       loop: "{{ groups.keys() | difference(['all', 'ungrouped']) }}"
+
+    - name: build patch schedules
+      ansible.controller.schedule:
+        name: "{{ sc }} - {{ item }}"
+        state: present
+        unified_job_template: "Demo Job Template"
+        rrule: "{{ query('ansible.controller.schedule_rrule', 'none', start_date={{ item | extract_patch_date_from_host_collection }}) }}"
+      loop: "{{ groups.keys() | difference(['all', 'ungrouped']) }}"
