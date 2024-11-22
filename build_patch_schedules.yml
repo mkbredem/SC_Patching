@@ -17,5 +17,5 @@
         name: "sc - patch {{ item }}"
         state: present
         unified_job_template: "SC - Patching"
-        rrule: "{{ query('ansible.controller.schedule_rrule', 'none', start_date={{ item | extract_patch_date_from_host_collection }}) }}"
+        rrule: "{{ query('ansible.controller.schedule_rrule', 'none', start_date=item | extract_patch_date_from_host_collection) }}"
       loop: "{{ groups.keys() | difference(['all', 'ungrouped']) }}"
