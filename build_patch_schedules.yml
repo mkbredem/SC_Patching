@@ -11,7 +11,7 @@
     - name: Show Patch Date
       debug:
         msg: "{{ item | extract_patch_date_from_host_collection}}"
-      loop: "{{ groups.keys() | difference(['all', 'ungrouped']) }}"
+      loop: "{{ groups.keys() | select('search', 'lxp_rhe') }}"
 
     - name: build patch schedules
       ansible.controller.schedule:
