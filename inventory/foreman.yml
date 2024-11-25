@@ -2,9 +2,9 @@
 #foreman.yml
 plugin: redhat.satellite.foreman
 host_filters: 'organization="Shadowman"'
-url: "{{ foreman_url }}"
-user: "{{ foreman_user }}"
-password: "{{ foreman_password }}"
+url: "{{ lookup('ansible.builtin.env', 'FOREMAN_SERVER') }}"
+user: "{{ lookup('ansible.builtin.env', 'FOREMAN_USER') }}"
+password: "{{ lookup('ansible.builtin.env', 'FOREMAN_PASSWORD') }}"
 #validate_certs: False
 
 #keyed_groups:
