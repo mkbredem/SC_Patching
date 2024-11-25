@@ -11,15 +11,15 @@
           groups.keys()
           | select('search', 'lxp_rhe') 
         }}        
-        
+
 - name: Show Patch Date
   debug:
     var: "{{ item | extract_patch_date_from_host_collection }}"
-  loop: >
-    {{
-      groups.keys()
-      | select('search', 'lxp_rhe') 
-    }}
+#  loop: >
+#    {{
+#      groups.keys()
+#      | select('search', 'lxp_rhe') 
+#    }}
 
     - name: Show Patch Date
       debug:
