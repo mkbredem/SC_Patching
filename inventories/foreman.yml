@@ -1,4 +1,3 @@
----
 plugin: redhat.satellite.foreman
 host_filters: 'organization="Shadowman"'
 
