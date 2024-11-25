@@ -1,20 +1,33 @@
 ---
-#foreman.yml
-plugin: redhat.satellite.foreman
-host_filters: 'organization="Shadowman"'
-url: "{{ foreman_server }}"
-user: "{{ foreman_user }}"
-password: "{{ foreman_password }}"
-#validate_certs: False
-
-#keyed_groups:
-#- key: foreman['host_collections'] | lower | regex_replace(' ', '') | regex_replace('[^A-Za-z0-9_]', '_') | regex_replace('none', '')
-#  prefix: foreman_environment_
-#  separator: ''
-#legacy_hostvars: true
-#plugin: theforeman.foreman.foreman
-#validate_certs: false
-#want_facts: true
-#want_hostcollections: true
-#want_params: true
-#vars_prefix: foreman_
+compose:
+  ansible_host: ip
+  ip_addr: ip
+  fqdn: name
+  os: '''rhel'''
+group_prefix: satellite_
+keyed_groups:
+  - key: location_name
+    prefix: satellite_location_
+    separator: ''
+  - key: organization_name
+    prefix: satellite_organization_
+    separator: ''
+  - key: content_facet_attributes.lifecycle_environment_name
+    prefix: satellite_lifecycle_environment_
+    separator: ''
+  - key: content_facet_attributes.content_view_name
+    prefix: satellite_content_view_
+    separator: ''
+legacy_hostvars: false
+plugin: theforeman.foreman.foreman
+validate_certs: false
+want_facts: true
+want_content_facet_attributes: true
+use_reports_api: false
+want_host_group: true
+want_location: true
+want_organization: true
+want_hostcollections: true
+want_params: true
+host_filters: content_view_id != 6
+vars_prefix: ''
