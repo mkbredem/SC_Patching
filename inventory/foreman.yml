@@ -1,5 +1,5 @@
 ---
-#my.foreman.yml
+#foreman.yml
 plugin: redhat.satellite.foreman
 host_filters: 'organization="Shadowman"'
 validate_certs: False
