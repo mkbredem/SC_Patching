@@ -2,6 +2,9 @@
 #foreman.yml
 plugin: redhat.satellite.foreman
 host_filters: 'organization="Shadowman"'
+url: "{{ foreman_url }}"
+user: "{{ foreman_user }}"
+password: "{{ foreman_password }}"
 validate_certs: False
 
 #keyed_groups:
