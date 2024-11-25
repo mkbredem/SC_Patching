@@ -1,5 +1,5 @@
 ---
-plugin: theforeman.foreman.foreman
+plugin: redhat.satellite.foreman
 host_filters: 'organization="Shadowman"'
 
 
