@@ -39,6 +39,8 @@ def extract_details(input_string):
     """
     Extract details from a host collection string.
     """
+    input_string = input_string.replace("foreman_hostcollection_", "")
+    
     # Extract the quarter (indices 13-14)
     quarter = input_string[12:14]
 

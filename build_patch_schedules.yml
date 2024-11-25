@@ -6,11 +6,7 @@
     - name: show groups
       debug:
         var: item
-      loop: >
-        {{
-          groups.keys()
-          | select('search', 'lxp_rhe') 
-        }}
+      loop: "{{ groups.keys() | select('search', 'lxp_rhe') }}"
 
     - name: Show Patch Date
       debug:
