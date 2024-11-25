@@ -1,7 +1,7 @@
 #my.foreman.yml
 plugin: redhat.satellite.foreman
 host_filters: 'organization="Shadowman"'
-
+validate_certs: False
 
 #keyed_groups:
 #- key: foreman['host_collections'] | lower | regex_replace(' ', '') | regex_replace('[^A-Za-z0-9_]', '_') | regex_replace('none', '')
