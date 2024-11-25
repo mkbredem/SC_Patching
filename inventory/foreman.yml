@@ -5,7 +5,7 @@ host_filters: 'organization="Shadowman"'
 url: "{{ foreman_url }}"
 user: "{{ foreman_user }}"
 password: "{{ foreman_password }}"
-validate_certs: False
+#validate_certs: False
 
 #keyed_groups:
 #- key: foreman['host_collections'] | lower | regex_replace(' ', '') | regex_replace('[^A-Za-z0-9_]', '_') | regex_replace('none', '')
